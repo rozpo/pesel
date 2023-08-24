@@ -1,8 +1,4 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
+/// Dart package for validation of the national identification number used in Poland.
 library;
 
 export 'src/pesel_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.

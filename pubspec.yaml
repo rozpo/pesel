@@ -1,5 +1,5 @@
 name: pesel
-description: A starting point for Dart libraries or applications.
+description: Dart package for validation of the national identification number used in Poland.
 version: 1.0.0
 repository: https://github.com/rozpo/pesel
 
