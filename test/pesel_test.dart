@@ -80,4 +80,17 @@ void main() {
           () => expect(Pesel('00000000080').sex, equals(Sex.female)));
     });
   });
+
+  group('Pesel().dateOfBirth is', () {
+    test('1800-10-01',
+        () => expect(Pesel('00810100000').dateOfBirth, DateTime(1800, 1, 1)));
+    test('1900-10-01',
+        () => expect(Pesel('00100100000').dateOfBirth, DateTime(1900, 10, 1)));
+    test('2011-11-11',
+        () => expect(Pesel('11311100000').dateOfBirth, DateTime(2011, 11, 11)));
+    test('2148-02-12',
+        () => expect(Pesel('48421200000').dateOfBirth, DateTime(2148, 2, 12)));
+    test('2266-12-08',
+        () => expect(Pesel('66720800000').dateOfBirth, DateTime(2266, 12, 8)));
+  });
 }
