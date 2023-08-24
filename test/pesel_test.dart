@@ -34,4 +34,22 @@ void main() {
       test('digit is 8', () => expect(Pesel('00000000080').isMale, isFalse));
     });
   });
+
+  group('Pesel().isFemale', () {
+    group('returns true when', () {
+      test('digit is 0', () => expect(Pesel('00000000000').isFemale, isTrue));
+      test('digit is 2', () => expect(Pesel('00000000020').isFemale, isTrue));
+      test('digit is 4', () => expect(Pesel('00000000040').isFemale, isTrue));
+      test('digit is 6', () => expect(Pesel('00000000060').isFemale, isTrue));
+      test('digit is 8', () => expect(Pesel('00000000080').isFemale, isTrue));
+    });
+
+    group('returns false when', () {
+      test('digit is 1', () => expect(Pesel('00000000010').isFemale, isFalse));
+      test('digit is 3', () => expect(Pesel('00000000030').isFemale, isFalse));
+      test('digit is 5', () => expect(Pesel('00000000050').isFemale, isFalse));
+      test('digit is 7', () => expect(Pesel('00000000070').isFemale, isFalse));
+      test('digit is 9', () => expect(Pesel('00000000090').isFemale, isFalse));
+    });
+  });
 }
