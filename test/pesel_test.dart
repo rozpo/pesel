@@ -2,15 +2,15 @@ import 'package:pesel/pesel.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('A group of tests', () {
-    final awesome = Awesome();
+  group('Pesel()', () {
+    group('throws assert when PESEL is', () {
+      test('too short', () {
+        expect(() => Pesel('1234567890'), throwsA(isA<AssertionError>()));
+      });
 
-    setUp(() {
-      // Additional setup goes here.
-    });
-
-    test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
+      test('too long', () {
+        expect(() => Pesel('123456789012'), throwsA(isA<AssertionError>()));
+      });
     });
   });
 }
