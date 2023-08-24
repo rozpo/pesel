@@ -13,4 +13,9 @@ void main() {
       });
     });
   });
+
+  group('Pesel().isValid returns', () {
+    test('true', () => expect(Pesel('22291028314').isValid, isTrue));
+    test('false', () => expect(Pesel('12345678901').isValid, isFalse));
+  });
 }
