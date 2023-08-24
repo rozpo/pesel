@@ -1,39 +1,80 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# PESEL Library
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+The PESEL library is a Dart package that provides functionality to work with PESEL (Personal Identification Number) in Poland. PESEL is used to identify individuals and contains information about birthdate and sex.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+https://obywatel.gov.pl/pl/dokumenty-i-dane-osobowe/czym-jest-numer-pesel
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Installation
 
-## Features
+To use this library in your Dart project, add the following dependency to your `pubspec.yaml` file:
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+```yaml
+dependencies:
+  pesel: ^1.0.0
+```
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Then, run `dart pub get` to fetch the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'package:pesel/pesel.dart';
+
+void main() {
+  // Create a Pesel instance
+  final peselString = "22291028314";
+  final pesel = Pesel(peselString);
+
+  // Print the PESEL number
+  print(pesel);
+
+  // Check if the PESEL is valid
+  if (pesel.isValid) {
+    print("This PESEL is valid.");
+  } else {
+    print("This PESEL is not valid.");
+  }
+
+  // Check if the PESEL belongs to a male or female
+  if (pesel.isMale) {
+    print("This PESEL belongs to a male.");
+  } else if (pesel.isFemale) {
+    print("This PESEL belongs to a female.");
+  }
+
+  // Print the sex of the individual
+  print("Sex: ${pesel.sex}");
+
+  // Print the date of birth
+  print("Date of Birth: ${pesel.dateOfBirth}");
+}
 ```
 
-## Additional information
+## API Reference
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+### Class: Pesel
+
+Represents a PESEL (Personal Identification Number) in Poland, used to identify individuals.
+
+#### Constructors
+
+- `Pesel(String pesel)`: Creates a Pesel instance from a valid PESEL string.
+
+#### Properties
+
+- `bool isMale`: Checks if the PESEL belongs to a male individual.
+- `bool isFemale`: Checks if the PESEL belongs to a female individual.
+- `bool isValid`: Checks if the PESEL is valid based on its checksum.
+- `DateTime dateOfBirth`: Retrieves the date of birth associated with the PESEL.
+- `Sex sex`: Determines the sex of the individual associated with the PESEL.
+
+### Enum: Sex
+
+Represents the biological sex of an individual.
+
+- `male`: Represents the male sex.
+- `female`: Represents the female sex.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
