@@ -1,5 +1,10 @@
 # PESEL Library
 
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/rozpo/pesel/dart.yml)
+![Codecov](https://img.shields.io/codecov/c/github/rozpo/pesel)
+![GitHub release (with filter)](https://img.shields.io/github/v/release/rozpo/pesel)
+![GitHub](https://img.shields.io/github/license/rozpo/pesel)
+
 The PESEL library is a Dart package that provides functionality to work with PESEL (Personal Identification Number) in Poland. PESEL is used to identify individuals and contains information about birthdate and sex.
 
 https://obywatel.gov.pl/pl/dokumenty-i-dane-osobowe/czym-jest-numer-pesel
