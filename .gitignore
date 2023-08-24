@@ -8,3 +8,6 @@ pubspec.lock
 
 # Generated files for documentation
 doc/
+
+# Coverage raports
+coverage/
